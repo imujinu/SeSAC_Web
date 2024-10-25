@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 태그를 사용해보아요!</title>
+</head>
+<body>
+    <table border="1" width="150" height="100" align="center" bgcolor="skybule" bordercolor="red">
+        <caption>table 만들어보기</caption>
+
+        <!-- 보더 색상은 왜 빨간색인가요? 
+         너 이거 html로 두지말고 css로 하는게 좋아
+         라는 경고 표시이다.-->
+        
+         <tr></tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        <tr></tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        <tr></tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+    </table>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>떡볶이</td>
+            <td>5,000원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        <tr>
+            <td>참치김밥</td>
+            <td>4,000원</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>순대</td>
+            <td>4000원</td>
+            <td>간, 허파 있어요.</td>
+        </tr>
+    </table>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <caption>new 가격표</caption>
+        <tr>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>떡볶이</td>
+            <td>5,000원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        <tr>
+            <td>참치김밥</td>
+            <td rowspan="2">4,000원</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>치즈김밥</td>
+            <!-- <td>4,000원</td> -->
+            <td>신메뉴</td>
+        </tr>
+        <tr>
+            <td colspan="3">순대(품절)</td>
+            <!-- <td>4000원</td>
+            <td>간, 허파 있어요.</td> -->
+        </tr>
+    </table>
+    <!-- 행은 가로열 열은 세로열 -->
+</body>
+</html>
+
+<header></header>

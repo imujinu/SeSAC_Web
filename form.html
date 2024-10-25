@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 태그와 관련 태그 사용해보기</title>
+</head>
+<body>
+    <form>
+        <label>
+        text <input type="text" placeholder="안녕하세요"/> <br/> 
+    </label>
+
+        <label for="emailId">email</label>
+       <input type="email" id="emailId" disabled placeholder="example@naver.com"/> <br/>
+
+       <label > 
+       password <input type="password" placeholder="비밀번호" /> <br/>
+    </label>
+
+    <br/>
+
+        <input type="color">
+        <input type="range">
+        <input type="date">
+        <input type="file">
+        <input type="number">
+
+        <br/>
+
+        <input type="button" value="버튼">
+        <input type="submit" value="버튼">
+        <button>버튼</button>
+        <button type="button">버튼</button>
+        <br/>
+        <br/>
+        <!-- 1. 첫글자는 숫자가 오면 안된다. 
+        2. 되도록이면 전부 영어로 이름 짓기
+        3. _(언더바는) 가능 하지만 -(하이픈)불가능!!!
+        4._(언더바 외의 특수문자는 불가능) 
+        
+        
+        
+        -->
+
+
+
+
+        <h5>다음 중 input type이 아닌 것은?(모두 고르시오)</h5>
+        <input type="checkbox" name="input" disabled> text
+        <input type="checkbox" name="input"> click
+        <input type="checkbox" name="input"> img
+        <input type="checkbox" name="input"> date
+        <input type="checkbox" name="input"> bread
+        
+        <h5>다음 중 img 태그의 속성인 것은?</h5>
+        <label>
+        <input type="radio" name="img" /> 
+        title
+        </label>
+        <label>
+        <input type="radio" name="img" disabled/> 
+        value
+        </label>
+
+        <label>
+        <input type="radio" name="img" checked /> 
+        mouse
+        </label>
+
+
+        <input type="radio" name="img" id="alt"/>
+        <label for="alt">alt</label> 
+        <input type="radio" name="img" id="type" /> 
+        <label for="type">type</label>
+
+ <!-- 폼을 실제로 서버에 제출할 때 서브밋 타입을 사용한다 -->
+
+        <!-- select -->
+         <br/>
+         <select name="flower">
+            <optgroup label="빨간꽃">
+                <option value="장미">장미</option>
+                <option value="동백꽃">동백꽃</option>
+            </optgroup>
+            <optgroup label="흰꽃">
+                <option value="매화">매화</option>
+                <option value="목련">목련</option>
+            </optgroup>
+            </select>
+
+         <!-- select 태그는 옵션과 같이온다 -->
+    </form>
+    <textarea cols="30" rows="10" placeholder="글씨를 짱많이씁니다"></textarea>
+    
+</body>
+</html>
+
+<!-- 폼태그에는 여러 태그가 있어야 된다 
+ 제출을 위한 태그이다. 그건 input이 담당한다.-->
+ <!-- disabled는 모든 태그 가능하다 -->
+
+ <!-- <table>
+    <tr>
+        <td>
+        </td>
+            
+        </tr>
+    </table> -->
