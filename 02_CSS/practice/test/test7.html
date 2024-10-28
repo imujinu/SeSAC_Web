@@ -24,12 +24,24 @@
       }
       /* checked */
       /* active */
-
-      .box:active{
-        color: pink;
-        background-color :darkolivegreen
+      
+      #red:checked + label {
+        color: aqua;
+        background-color: red;
       }
-     
+
+      #blue:checked + label{
+        color: aqua;
+        background-color: red;
+      }
+      
+      #yellow:checked + label{
+        color: aqua;
+        background-color: red;
+      }
+
+
+
       button {
         float: right;
         padding: 5px 15px;
@@ -52,19 +64,20 @@
     <form>
         <textarea>건의 사항</textarea>
    
-            <div class="box">
-            <label>
-            <input type="checkbox" name="color">빨강
+            
+            <input type="checkbox" name="color" id="red"/>
+            <label for="red">빨강</label>
+        
+            <input type="checkbox" name="color" id="blue"/>
+            <label for="blue">
+            파랑
             </label>
             
-            <label>
-            <input type="checkbox" name="color">파랑
+            <input type="checkbox" name="color" id="yellow"/>
+            <label for="yellow">
+            노랑
             </label>
-            
-            <label>
-            <input type="checkbox" name="color">노랑
-            </label>
-        </div>
+    
       <!-- label
         - 명시적 방식: id와 for 맞춰주기
         - 암시적 방식: label 내부에 input 쓰기 
