@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자 종합실습</title>
+    <style>
+        h3:hover{
+            color:blueviolet;
+            background-color: bisque;
+        }
+      form {
+        width: 400px;
+      }
+
+      /* focus */
+      textarea:focus{
+        background-color: violet;
+      }
+
+      textarea {
+        height: 200px;
+        width: 100%;
+      }
+      /* checked */
+      /* active */
+
+      .box:active{
+        color: pink;
+        background-color :darkolivegreen
+      }
+     
+      button {
+        float: right;
+        padding: 5px 15px;
+        background-color: #f96666;
+        color: white;
+        font-size: 17px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      button:active{
+        color: darkkhaki;
+        background-color: red
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h3>건의 사항을 적어주세요!</h3>
+    <form>
+        <textarea>건의 사항</textarea>
+   
+            <div class="box">
+            <label>
+            <input type="checkbox" name="color">빨강
+            </label>
+            
+            <label>
+            <input type="checkbox" name="color">파랑
+            </label>
+            
+            <label>
+            <input type="checkbox" name="color">노랑
+            </label>
+        </div>
+      <!-- label
+        - 명시적 방식: id와 for 맞춰주기
+        - 암시적 방식: label 내부에 input 쓰기 
+            - checkbox 사용 시 명시적 방식으로 진행하기	
+      -->
+
+      <!-- checkbox와 textarea 만들기 -->
+      <button>제출</button>
+    </form>
+  </body>
+</html>

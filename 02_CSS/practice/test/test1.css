@@ -1,0 +1,29 @@
+.container { 
+    background-color: orange;
+    width: auto;
+    height: 200px;
+}
+
+.html{ 
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    background-color: skyblue;
+    margin-right: 30px;
+}
+
+.css{
+    background-color: green;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin-right: 30px;
+
+}
+
+.javascript{
+    background-color: red;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+}
