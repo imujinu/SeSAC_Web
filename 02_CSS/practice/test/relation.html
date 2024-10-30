@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>relation</title>
+    <style>
+        .container{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: bisque;
+            text-align: center;
+            line-height: 100px;
+        }
+        .item1{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 50px;
+            top: 50px;
+            background-color: red;
+        }
+
+        .item2{
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            right: 30px;
+            bottom: 100px;
+            background-color: sandybrown;
+        }
+
+        .item3{
+            position: absolute;
+            background-color: green;
+            height: 100px;
+            width: 100px;
+            right: 100px;
+            top: 100px;
+            text-align: center;
+            line-height: 100px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">item1</div>
+        <div class="item2">item2</div>
+        
+    </div>
+    <div class="item3">item3</div>
+</body>
+</html>

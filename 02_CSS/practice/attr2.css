@@ -35,6 +35,187 @@
 
     padding: 30px;
     margin : 40px;
+}
+
+.parent {
+    width: 500px;
+    height: 300px;
+    background-color: red;
+    
+}
+.parent > .min{
+    min-width: 400px;
+    background-color: orange;
+    height: 100px;
+}
+
+.parent > .max{
+    max-width: 400px;
+    height: 100px;
+    background-color: violet; 
+
+}
+/* max는 이하 mim은 이상 */
+
+
+/* 단위 확인 */
+/* 클래스는 많이 가질 수 있다. */
+
+.box{
+    background-color: beige;
+    border: 1px solid black;
+}
+
+.box-px{
+    width: 50px;
+    height: 50px;
+
+}
+
+.box-view{
+    width: 50vw;
+    height: 50vh;
+
+}
+/* 뷰포트는 우리가 홈페이지를 켰을 때 보이는 정도 
+그러므로 우리가 홈페이지를 늘렸다 줄였다 하면 크기가 변함 */
+
+.box-per{
+    width: 50%;
+    height: 50%;
+}
+
+/* 퍼센트는 부모 속성에서 값을 가져옴 body
+div를 만들면 기본 높이를 가져온다.
+div는 컨텐츠 만큼의 높이를 가져온다. 
+body값의 height가 명시되어 있지 않음. 그러므로 auto값으로 자동으로 정해진다 */
+
+/* html의 폰트사이즈가 1rem */
+html{
+    font-size: 20px;
+}
+
+.rem{
+    font-size:2rem;
+}
+
+/* 부모의 폰트 사이즈가 1em입니다 */
+
+.em{
+font-size: 2em;
+
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.border{
+    /* width, style, color순으로 단축속성 작성 */
+    border: 1px solid black;
+    border-color: bule;
+    border-style:dotted;
+    border-width: 5px;
+    border-left :2px dashed yellow;
+    border-top-style: solid;
+    opacity: 0;
+}
+
+/* 왜 중간에 안심하고 있었는지.. 깨달아 버렷다. 
+두려웠던 것 같아 모르는 게 또 등장하지는 않을까 싶었던거지..0 */
+
+.rounded{
+    border-radius: 10%;
+    /* 단축속성 */
+    border-radius: 5px 10px 20px 40px;
+    border-radius: 5px 20px 50px;
+    border-radius: 5px 50px;
+}
+.box-sizing{
+    border: 15px solid red;
+    padding: 20px;
+    background-color: yellowgreen;
 
 
 }
+
+
+.content-box{
+    box-sizing: content-box;
+}
+
+.border-box{
+    box-sizing: border-box;
+}
+
+.d-none {
+    display: none;
+    background-color: red;
+    }
+
+    .invisible {
+    /* visibility: hidden; */
+    background-color: orangered;
+    }
+
+    .opacity-0 {
+    /* opacity: 0; */
+    background-color: tomato;
+    }
+
+    .test1{
+        width: 100px;
+        height: 100px;
+       border-top: 1px solid black;
+       border-right: 3px dotted red;
+       border-bottom: 5px dashed blue;
+       border-left: 6px solid orange;
+       border-width: 1px 3px 4px 5px;
+       border-style: dashed solid dotted;
+       border-color: aqua aliceblue darkblue cadetblue;
+       border-top-style: double;
+       border-bottom-style:dashed;
+       border-right-style: groove;
+       border-left-style: hidden;
+    }
+
+    .test2{
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        border-radius: 10px 20px 30px 40px;
+    }
+
+    .square > img[alt='푸'] {
+        width: 200px;
+    }
+
+    .overflow-hidden{
+        overflow: hidden;
+    }
+
+    .overflow-auto{
+        overflow: auto;
+    }
+
+    .overflow-scroll{
+        overflow:scroll
+    }
+
+    .overflow-visible{
+        overflow:visible;
+        overflow-x:hidden;
+        overflow-y: auto;
+        overflow: hidden auto; 
+        /* 처음이 x축 두번째가 y축입니다! */
+
+    }
+
+    /* 오토랑 스크롤의 차이는? 똑같이 스크롤이 나타나는데
+    아 내용이 모자라면 오토는 스크롤이 생기지 않아. 스크롤은 내용이 
+    없어도 무조건 스크롤이 생김 
+    스크롤 만들 일이 생기면 => auto */

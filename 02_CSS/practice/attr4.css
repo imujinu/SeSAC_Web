@@ -1,0 +1,53 @@
+.box
+{display: inline-block;
+    width: 400px;
+    height: 800px;
+    border : 1px solid black;
+
+}
+
+.background{
+    background-color: aquamarine;
+    background-color: palegoldenrod;
+
+    /* color image repeat position/size */
+    background: linear-gradient(to left, black,white);
+}
+
+.background-image{
+    
+    background-image: url("./small_img.png");
+
+    /* background-repeat : repeat */
+    background-repeat : repeat;
+    background-repeat : repeat-y;
+    background-repeat : repeat-x;
+    background-repeat : no-repeat;
+
+    /* 2.background-position */
+    background-position: top left;
+    background-position: center;
+    background-position: top center;
+    background-position: 100px; 
+    /* 왼쪽 위로부터 100px */
+    background-position: 100px 10px;
+     /*x축 y축 순서입니다 단축속성  */
+
+     /* 3. background-size */
+     background-size: auto;
+     background-size: 50px;
+     /* 사이즈를 하나만 쓰면 가로너비 설정되고, 세로는 비율에 맞춰 자동설정 */
+
+     background-size: 100px;
+     background-size: cover;
+     /* background-size: contain; */
+
+     /* background-attachment : scroll ;*/
+    background-attachment: scroll ;
+    background-attachment: fixed ;
+    }
+
+    body{
+        height: 1000px;
+    }
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bug</title>
+    <style>
+        .container{
+            background-image: url(./img/grass.png);
+            width: 1000px;
+            height: 1000px;
+            background-repeat: no-repeat;
+            background-size: contain;
+           background-position: bottom center;
+           position: relative;
+        }
+
+        .bug1{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 100px;
+            background-color: navy;
+            left: 200px;
+            top:350px;
+
+        }
+
+        .whiteeye{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            border-radius: 50px;
+            background-color: white;
+            z-index: 1;
+            left: 30px;
+            top: 30px;
+
+
+        }
+
+        .blackeye{
+            position:absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: black;
+            z-index: 2;
+            left: 5px;
+            top: 20px;
+            
+
+        }
+
+
+        .bug2{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 100px;
+            background-color: midnightblue;
+            left: 60px;
+            top:60px;
+        }
+        .bug3{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 100px;
+            background-color: lightblue;
+            left: 90px;
+            top:60px;
+        }
+        .bug4{ 
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 100px;
+            background-color: skyblue;
+            left: 90px;
+            top:80px;
+        }
+
+        .bug5{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 100px;
+            background-color: rgb(139, 187, 205);
+            left: 90px;
+            top:80px;
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bug1">
+            <div class="whiteeye">
+                <div class="blackeye"></div>
+            <div class="bug2">
+                <div class="bug3">
+                    <div class="bug4">
+                        <div class="bug5">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            </div>
+        </div>
+           
+           
+          
+
+    </div>
+    
+</body>
+</html>
