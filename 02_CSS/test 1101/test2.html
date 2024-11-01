@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container{
+            width: 100vh;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+        }
+
+        .img1{
+            margin-right: -200px;
+            width: 400px;
+            height: 400px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(./beach1.jpg);
+            transform: perspective(2000px) rotateX(45deg) skewY(40deg);
+            transition: 0.5s linear;
+            z-index: 3;
+        }
+
+        .img1:hover{
+            transform: perspective(2000px) rotateY(30deg);
+            z-index: 4;
+
+        }
+        
+        .img2{
+            width: 400px;
+            height: 400px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(./beach2.jpg);
+            transform: perspective(2000px) rotateX(45deg) skewy(40deg);
+            transition: 0.5s linear ; 
+            z-index: 2;
+        }
+
+        .img2:hover{
+            transform: perspective(2000px) rotateY(30deg);
+        z-index: 5;}
+
+        .img3{
+            margin: -200px;
+            width: 400px;
+            height: 400px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(./beach3.jpg);
+            transform: perspective(1500px) rotateX(45deg) skewY(45deg);
+            transition: 0.5s linear ;
+            z-index: 1;
+        }
+
+        .img3:hover{
+            transform: perspective(2000px) rotateY(30deg);
+            z-index: 6;}
+            
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="img1"></div>
+    <div class="img2"></div>
+    <div class="img3"></div>
+</div>
+</body>
+</html>
