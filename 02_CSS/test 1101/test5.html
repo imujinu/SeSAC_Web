@@ -7,43 +7,46 @@
 
     <style>
         .container{
-            width: 100w;
-            height: 50px;
-            border: 1px solid red;
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .text{
-            border: 1px solid pink;
-            animation: text 2s linear;
-            width: 100vw;
-            height: 200px;
-            transition: 1s;
-            overflow:wrap;
-            /* display: flex;
-            flex-wrap: wrap;
-            align-content: flex-start; */
+            animation : textmove 2s linear
         }
 
-        @keyframes text{
-            from{
-               transform: translateX(100vw);
+        @keyframes textmove{
+            0%{
+                transform: translate(100vw,0);
+                width: 100vw;
             }
-            to{
-                left: 100;
+
+            50%{
+                width: 40vw;
+            }
+            
+
+            100%{
+                transform: translate(0,0);
+                width: 100vw;
             }
         }
 
-        
+    
+
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="text">
-            
-            "As I relax on the sofa and gaze around a room a thought hits me: this is exactly the place I've been looking for all my life. A little hideaway in some sinkhole somewhere. I'd always thought of it as a secret, imaginary place, and can barely believe that it actually exists. I close my eyes and take a breath, and wonder of it all settles over me like a gentle cloud."
+        <div class="text">"As I relax on the sofa and gaze around a room a thought hits me: this is exactly the place I've been looking for all my life. A little hideaway in some sinkhole somewhere. I'd always thought of it as a secret, imaginary place, and can barely believe that it actually exists. I close my eyes and take a breath, 
+            <span class="text2">and wonder of it all settles over me like a gentle cloud."</span>
         </div>
     </div>
-        
+
+
+    
 </body>
 </html>
