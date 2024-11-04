@@ -48,7 +48,7 @@
     transform: translateX(50px);
     transform: scaleX(1.2);
     /* 단축속성 */
-    /* transform: perspective() translate() scale() rotate() skew(); */
+        
     transform: translateX(100px) scaleX(1.2);
 }
 
