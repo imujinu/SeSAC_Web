@@ -4,4 +4,4 @@ function now(){
     
 
 
-now<12 ? console.log("지금은 오전입니다") : console.log("지금은 오후입니다")
+now<12? console.log("지금은 오전입니다") : console.log("지금은 오후입니다")
