@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>방명록 만들기</title>
+  </head>
+  <body>
+    <h1>여기는 방명록!!</h1>
+    <form>
+      <label for="writer">작성자</label>
+      <input type="text" id="writer" autocomplete="off" />
+      <br />
+      <br />
+
+      <label for="content">내용</label>
+      <input type="text" id="content" style="width: 500px" autocomplete="off" />
+      <br />
+      <br />
+
+      <button type="button" onclick="writeNote();">등록</button>
+    </form>
+
+    <br />
+    <br />
+
+    <table id="table" border="1" cellpadding="10" cellspacing="1">
+      <tr>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+      <!-- 
+        코드 추가 예시
+        <tr>
+          <td>홍길동</td>
+          <td>하이</td>
+          <td>2022-10-05 12:34</td>
+        </tr>
+      -->
+    </table>
+
+    <script>
+        /* 작성자 선택, 내용 선택 후 밸류값 뽑아내기 
+        그 밸류값을 변수에 저장하고. 
+        그 변수로 tr과 td 속성 그리고 내용은 value로 지정하면 될듯?
+         */
+
+          // 왜 body태그로 작성시에는 안됐지? 
+
+      // TODO: practice14_설명.png 이미지의 조건을 만족하는 js 코드 작성
+      // writeNote() 함수를 미리 정의해두었습니다.
+
+      // [등록] 버튼 클릭시 writeNote() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
+      function writeNote() {
+
+        let writer = document.querySelector('#writer')
+        let content = document.querySelector('#content') 
+
+        let write = writer.value
+        let con = content.value
+
+        let table = document.querySelector('#table')
+
+        let tr = document.createElement("tr")
+        table.append(tr)
+        
+        let td1 = document.createElement("td")
+        td1.textContent=write          //문제 1. value값을 못받아오고 있다. 추론1. write지정이 안됐다. x 2.밸류값이 저장이 안됐다. 3. 변수값에 밸류값이 안들어갔다. 
+        
+        let td2 = document.createElement("td")
+        td2.textContent=con
+        
+        let now = new Date
+        let td3 = document.createElement("td")
+        td3.textContent=`${now.toLocaleDateString()} ${now.getHours()} : ${now.getMinutes()}`  
+        
+        tr.append(td1, td2, td3)
+        
+      }
+
+
+
+
+    </script>
+  </body>
+</html>

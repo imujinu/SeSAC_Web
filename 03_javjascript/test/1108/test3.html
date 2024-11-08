@@ -69,14 +69,8 @@
       // TODO: 문제 조건을 만족하는 js 코드 작성
       // (참고) article-box, img-box, text-center 클래스에 대한 스타일시트는 haed > style 태그에 이미 정의되어 있습니다.
 
-      const section = document.querySelector("section");
-      
      
-      
-      
-
-    //    for(i = 1; i<10; i++){
-    //   img.setAttribute("src","icecream[i]")}
+    
     const icecreams = [
         "내가 아인슈페너?!",
         "엄마는 외계인",
@@ -88,7 +82,7 @@
         "뮤! 넌 내거야",
         "오레오 쿠키 앤 크림",
       ];
-
+      const section = document.querySelector("section");
       for (i = 1; i < 10; i++) {
 
        let img = document.createElement(`img`)  //img태그의 숫자를 붙일 필요가 없었다.
