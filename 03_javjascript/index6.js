@@ -64,7 +64,7 @@ let date = "2024.11.06"
 date = date.replaceAll(".","--")
 console.log(date.replaceAll(".","--"))
 
-let hello = "hello"
+let hello = "hello man"
 console.log(typeof hello)
 
 let hello2 = hello.split()
@@ -72,6 +72,7 @@ let hello2 = hello.split()
 console.log(hello2)
 
 hello2 = hello.split("")
+hello2 = hello.split(" ")
 console.log(hello2)
 
 hello2 = hello.split("e") //e가 기준이 되어 양분된다. 

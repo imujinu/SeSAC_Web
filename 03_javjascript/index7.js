@@ -28,7 +28,7 @@ now = new Date()
 
 if ( now.getDay() === 0 || now.getDay() ===6)
     {console.log("오늘은 주말입니다.")}
-else {
+else {  
     console.log("오늘은 주말이 아닙니다.")
 }
 
@@ -51,12 +51,7 @@ console.log(Math.E)
 console.log(Math.PI)
 console.log(Math.SQRT2) // 루트 2의 값 
 
-console.log(Math.min(50, 10,1,2,3,4,-5)) // 최소값
-console.log(Math.max(50, 10,1,2,3,4,-5)) // 최대값
-console.log(Math.random()) // 0<= x < 1 작은 수 
-console.log(Math.round(5.3)) // 소수를 정수로 반올림
-console.log(Math.floor(5.3)) // 소수를 정수로 버림
-console.log(Math.ceil(5.3)) // 소수를 정수로 올림
+f
 
 
 // Math.random() 응용! 
