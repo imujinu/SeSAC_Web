@@ -175,7 +175,7 @@ btn3.addEventListener("click", changeColor)
     // 5. [change 이벤트]
 
     const chgInput = document.querySelector('#change-input')
-chgInput.addEventListener('change',function(){
+    chgInput.addEventListener('change',function(){
     console.log('changed!!!')
     })
 

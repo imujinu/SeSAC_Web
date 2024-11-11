@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+header{
+    background-color: skyblue;
+    width: 100%;
+    height: 100px;
+}
+
+header > .inner{
+    /* background-color: yellow; */
+    max-width: 1000px;
+    margin: 0 auto;
+
+    position: relative;
+    padding: 0 1rem;
+}
+
+hidden{
+    display: none;
+}
+
+.fa-solid fa-bars{
+    cursor:pointer
+}
+
+/* 메뉴, 로고, 메뉴바 정렬 */
+header > .inner > .logo{
+    height: 100%;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 10px;
+}
+
+header > .inner > .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header > .inner > .menu > li{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+header > .inner > .menu-bar{
+    display: none;
+}
+
+.small-menu{
+    display: none;
+}
+
+.visible{
+    visibility: hidden;
+}
+
+@media (max-width : 768px) {
+
+    .inner > .logo{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .menu > li {
+        display: none;
+    }
+    header > .inner > .menu-bar{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: end;
+        font-size: 40px;
+    }
+
+    .small-menu{
+        max-width: 768px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        background-color: rgb(229, 244, 250);
+    }
+
+    .small-menu > li:hover{
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+
+
+
+
+}
+

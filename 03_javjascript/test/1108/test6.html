@@ -25,61 +25,42 @@
     </form>
 
     <script>   
+    function cal() { 
+      let value1 = document.getElementById('value1')
+      let value2 = document.getElementById('value2')
+      let operator = document.getElementById('operator')
+      let result = document.getElementById('result')
+
+      let num1 = Number(value1.value.trim())
+      let num2 = Number(value2.value.trim())
+      let operator1 = operator.value.trim()
+      
+      let operationResult ; 
+      switch(operator1){
+          case '+' :
+          operationResult = num1 + num2
+          break;
+          case '-' :
+          operationResult = num1 - num2
+          break;
+          case '*' :
+          operationResult = num1 * num2
+          break;
+          case '%' :
+          operationResult = num1 % num2
+          break
+          default : 
+          operationResult = '--' 
+          break; 
+      }
+
+      result.value = operationResult
+      
 
 
 
-            function cal() {
-                
-            const num1 = document.querySelector('#value1')
-            const num2 = document.querySelector('#value2') 
-            const oper = document.querySelector('#operator')
-            let result1 = document.querySelector('#result')
-            
-            const a = Number(num1.value)
-            const b = Number(num2.value)
-            const op = oper.value
-
-        
-            let opeationResult;
-            switch(op){
-                case '-':
-                opeationResult = a - b
-                break;
-                case  '+':
-                opeationResult = a + b
-                break ;
-                case '%':
-                opeationResult = a % b
-                break ; 
-                case '*':
-                opeationResult = a * b
-                break;                
-                default:
-                opeationResult = "--"
-                break;
-                    
-            }
-
-            result1.value=opeationResult
-         
-            
-            
-        }  
-function resetInput() {
-            const num1 = document.querySelector('#value1')
-            const num2 = document.querySelector('#value2') 
-            const oper = document.querySelector('#operator')
-            let result1 = document.querySelector('#result')
-
-            const a = num1.value
-            const b = num2.value
-            const c = oper.value
-
-            num1.value = ""
-            num2.value = ""
-            oper.value = ""
-            result1.value= ""
-}
+    }  
+    function resetInput() {}
 
 
     // [계산] 버튼 클릭시 cal() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.

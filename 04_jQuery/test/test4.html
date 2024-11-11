@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border: 1px solid white;
+            margin:10px;
+            border-radius: 10%;
+            }
+
+            @media (max-width : 700px){
+                .container{
+                
+                    height: 100vh;
+                
+                    flex-direction: column;
+                }
+
+                .box{
+                    background-color: skyblue;
+                    border: 1px solid red;
+                    border-radius: 10%;
+                }
+            }
+                
+            
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    </body>
+</html>

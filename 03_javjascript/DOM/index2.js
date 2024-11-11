@@ -65,7 +65,7 @@ console.log(h1.classList.contains('add-h1')) // => if문에서 사용할 수 있
 console.log(h1.classList.contains('add-h2'))
 console.log(h1.classList) // 선택된요소의 클래스 목록 확인
 
-// 4. 부모, 자식, 형제 노드 찾기
+// 4. 부모, 자식, 형제 노드 기
 let friends = document.querySelector("#friends")
 let tigger = document.querySelector("#tigger")
 
