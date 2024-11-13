@@ -34,6 +34,9 @@
             font-size: 20px;
             font-weight: bold;
         }
+        td{
+            cursor: pointer;
+        }
         </style>
 </head>
 <form>
@@ -118,7 +121,13 @@
 
 
       
-        
+        $('td').dblclick(function(){
+            let td = $(this).text()
+            $('.date').val(td)
+        })
+
+
+
         $('form').submit(function(p){
             p.preventDefault()
            let date =  $('.date').val()
