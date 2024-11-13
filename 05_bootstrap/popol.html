@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- bootstrap cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap icon cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css">
+    <!-- sweet alert cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <style>
 
         .bi-list-ul{
@@ -34,6 +37,8 @@
         .clothes{
             display: grid;
             grid-template-columns: 1fr 1fr;
+            line-height: 30px;
+            font-size: 16px;
            
         }
     </style>
@@ -97,7 +102,10 @@
     <img class="d-block mx-auto mb-4" src="./images/deer.jpg" alt="" width="500" height="auto">
     <h1 class="display-5 fw-bold text-body-emphasis">프론트 엔드 개발자 '임진우'입니다</h1>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4"><p>안녕하세요 끊임없이 성장하는 노력형 개발자</p> <p>임진우입니다. </p> <p>저의 브라우저에 오신 것을 환영합니다.</p>
+      <p class="lead mb-4"><p>안녕하세요 성장형 개발자</p> <p>임진우입니다. </p> <p>저의 브라우저에 오신 것을 환영합니다.</p>
+      <button onclick="sweetalert()"> 눌러주세요 </button>
+        
+      
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         
       </div>
@@ -192,7 +200,7 @@
             <div class="row featurette clothes">
               <div class="col-md-7">
                 <h2 class="featurette-heading fw-normal lh-1"><i class="bi bi-window-stack"></i>포트폴리오1 <span class="text-body-secondary">쇼핑몰 3D 모델 구현</span></h2>
-                <p class="lead lh-1 mt-2">판매 중인 옷을 클릭하면 구매자의 체형과 비슷한 데이터 값의 마네킹이 등장해 옷을 시착합니다.</p>
+                <p class="lead">판매 중인 옷을 클릭하면 구매자의 체형과 비슷한 데이터 값의 마네킹이 등장해 옷을 시착합니다.</p>
               </div>
               <div class="col-md-5">
                 <img src="./images/clothes.png" alt="">
@@ -245,10 +253,17 @@
 
       <script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
       <script>
-
+       function sweetalert(){
+        Swal.fire({
+      title: "EXP+1",
+      text: "That thing is still around?",
+      icon: "question"
+      });}
      
       </script>
-
+      <!-- sweetalert2 cdn -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<!-- bootstrap cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
