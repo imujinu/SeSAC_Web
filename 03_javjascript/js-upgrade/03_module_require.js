@@ -14,3 +14,4 @@ console.log(module2)
 const {name, sayHi} = require('./03_module02.js')
 console.log(name)
 sayHi()
+

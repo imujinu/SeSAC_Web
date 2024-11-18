@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/test.css" />
+    <%- include("./includes/head" , {title : 'HOME'})%>
+  </head>
+  <body>
+    <%- include("./includes/header.ejs") %>
+
+    <!-- 이 틀을 다른 곳에서도 또 사용하고 싶다면? 
+       ejs에서 제공하는 컴퍼넌트를 이용하라! 컴퍼넌트? 나중에 공부! -->
+
+    <h1>테스트입니다...</h1>
+    <% for(let i = 1 ; i<=5 ; i++){ %>
+    <div>안녕하세요..</div>
+    <!-- <div>숫자 : <%=i%></div> -->
+    <img src="/static/img/pooh<%=i%>.png" alt="pooh<%=i%>" width="50" />
+    <% } %>
+
+    <!-- <img src="/static/img/pooh2.png" alt="pooh" /> -->
+    <!-- 나중에 public이라는 파일을 static으로 인식하게 해주겠다 -->
+  </body>
+</html>

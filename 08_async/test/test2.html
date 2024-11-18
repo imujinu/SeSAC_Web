@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function call(name) {
+        return new Promise((res, rej) => {
+          setTimeout(() => {
+            res("반가워");
+            console.log(name);
+          }, 1000);
+        });
+      }
+
+      call("kim");
+      //   function back() {
+      //     return new Promise((res, rej) => {
+      //       setTimeout(() => {
+      //         res("back");
+      //         console.log("back");
+      //       });
+      //     });
+      //   }
+
+      //   function hell() {
+      //     return new Promise((res, rej) => {
+      //       setTimeout(() => {
+      //         res("callback hell");
+      //       });
+      //     });
+      //   }
+
+      //   call("kim")
+      //     .then(function (res) {
+      //       console.log(res);
+      //       return back(result);
+      //     })
+      //     .then(function (res) {
+      //       console.log(res);
+      //       return hell(res);
+      //     })
+      //     .then(function (res) {
+      //       console.log(`여기는 ${res}`);
+      //     });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콜백 지옥 경험하기</title>
+  </head>
+  <body>
+    <h1>배경색이 1초에 한번씩 변경이 됩니다.</h1>
+    <script>
+      function bgcolor(color) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            document.body.style.backgroundColor = color;
+            resolve();
+          }, 1000);
+        });
+      }
+
+      // bgcolor("red")
+      //   .then(() => {
+      //     return bgcolor("orange");
+      //   })
+      //   .then(() => {
+      //     return bgcolor("yellow");
+      //   })
+      //   .then(() => {
+      //     return bgcolor("green");
+      //   })
+      //   .then(() => {
+      //     return bgcolor("blue");
+      //   });
+
+      // async await
+
+      async function execute() {
+        await bgcolor("red");
+        await bgcolor("oragne");
+        await bgcolor("yellow");
+        await bgcolor("green");
+        await bgcolor("blue");
+        await bgcolor("purple");
+      }
+
+      execute();
+      // function exec() {
+      //   bgcolor()
+      //     .then(() => {
+      //       document.body.style.backgroundColor = "red";
+      //       return bgcolor();
+      //     })
+      //     .then(() => {
+      //       document.body.style.backgroundColor = "orange";
+      //       return bgcolor();
+      //     })
+      //     .then(() => {
+      //       document.body.style.backgroundColor = "yellow";
+      //       return bgcolor();
+      //     })
+      //     .then(() => {
+      //       document.body.style.backgroundColor = "green";
+      //       return bgcolor();
+      //     })
+      //     .then(() => {
+      //       document.body.style.backgroundColor = "blue";
+      //       return bgcolor();
+      //     });
+      // }
+
+      // exec();
+    </script>
+  </body>
+</html>

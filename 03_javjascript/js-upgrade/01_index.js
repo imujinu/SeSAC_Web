@@ -112,7 +112,7 @@ let obj2 = {
 
 obj2.greeting()
 
-let me = {...obj1, ...obj2} //key값이 겹칠경우는 어떻게 나오나?
+let me = {...obj1, ...obj2} //key값이 겹칠경우는 어떻게 나오나? 뒤에께 출력된다. 
 me.greeting()
 console.log(me)
 
