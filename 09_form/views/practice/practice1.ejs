@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice</title>
+  </head>
+  <body>
+    <h1>실습문제 1입니다.</h1>
+    <form action="practice_result" method="get">
+      <label>이름 <input type="text" name="name" /> </label>
+      <br />
+
+      <fieldset>
+        <legend>성별</legend>
+        <label> <input type="radio" name="gender" value="남자" />남자 </label>
+        <label> <input type="radio" name="gender" value="여자" />여자 </label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <label>
+          <select name="date">
+            <%for(i=1990; i<2024 ; i++){%>
+            <option><%=i%></option>
+            <%}%>
+          </select>
+          년
+        </label>
+
+        <label>
+          <select name="date">
+            <%for(i=1; i<13 ; i++){%>
+            <option><%=i%></option>
+            <%}%></select
+          >월
+        </label>
+
+        <label>
+          <select name="date">
+            <%for(i=1; i<13 ; i++){%>
+            <option><%=i%></option>
+            <%}%></select
+          >일
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>관심사</legend>
+        <br />
+        <label>
+          <input type="checkbox" name="interset" value="여행" /> 여행
+        </label>
+        <label>
+          <input type="checkbox" name="interset" value="패션" /> 패션
+        </label>
+        <label>
+          <input type="checkbox" name="interset" value="음식" /> 음식
+        </label>
+        <br />
+      </fieldset>
+
+      <button>회원가입</button>
+    </form>
+  </body>
+</html>

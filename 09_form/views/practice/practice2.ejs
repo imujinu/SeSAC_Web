@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice</title>
+  </head>
+  <body>
+    <h1>실습문제 2입니다.</h1>
+    <form action="practice_result2" method="post">
+      <label>이름 <input type="text" name="name" required /> </label>
+      <br />
+      <fieldset>
+        <legend>성별</legend>
+        <label>
+          <input type="radio" name="gender" value="남자" required />남자
+        </label>
+        <label>
+          <input type="radio" name="gender" value="여자" required />여자
+        </label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <label>
+          <select name="date">
+            <%for(i=1990; i<2024 ; i++){%>
+            <option><%=i%></option>
+            <%}%>
+          </select>
+          년
+        </label>
+
+        <label>
+          <select name="date">
+            <%for(i=1; i<13 ; i++){%>
+            <option><%=i%></option>
+            <%}%></select
+          >월
+        </label>
+
+        <label>
+          <select name="date">
+            <%for(i=1; i<13 ; i++){%>
+            <option><%=i%></option>
+            <%}%></select
+          >일
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>관심사</legend>
+        <br />
+        <label>
+          <input type="checkbox" name="interset" value="여행" /> 여행
+        </label>
+        <label>
+          <input type="checkbox" name="interset" value="패션" /> 패션
+        </label>
+        <label>
+          <input type="checkbox" name="interset" value="음식" /> 음식
+        </label>
+        <br />
+      </fieldset>
+
+      <fieldset>
+        <legend>선택</legend>
+        <label>좋아하는 색상<input type="color" name="color" /></label>
+        <br /><label>좋아하는 숫자 <input type="number" name="number" /></label>
+      </fieldset>
+
+      다짐한마디 : <input type="textarea" name="textarea" />
+      <br />
+      <button>회원가입</button>
+    </form>
+    <script></script>
+  </body>
+</html>
