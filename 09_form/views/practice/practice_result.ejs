@@ -21,16 +21,51 @@
     </style>
   </head>
   <body>
+
+    <!-- 
+    name: 'ㄴㅇ',
+  gender: '남자',
+  year: '1990',
+  month: '1',
+  date: '1',
+  interset: '패션',
+
+  addInfo : false 
+  
+     -->
     <h1>결과 확인하기</h1>
     <p><span class="name">   <%=userInfo.name%>님 </span>환영합니다.</p>
     <p><div class="p1">성별 : <%=userInfo.gender%></div></p>
-    <p><div class="p1">생년월일 : <%=userInfo.date%></div></p>
+    <p><div class="p1">생년월일 : <%=userInfo.year%> / <%=userInfo.month%>/ <%=userInfo.date%> </div></p>
     <p><div class="p1">관심사 : <%=userInfo.interset%></div></p>
+    
+    <!-- name: 'ㄴㅇ',
+  gender: '남자',
+  year: '1990',
+  month: '1',
+  date: '1',
+  interset: '패션',
+  color: '#0062ff',
+  number: '9014211',
+  textarea: 'sds'
+
+  addInfo : true-->
+
     <h3>다른 태그 작성해보기</h3>
+
+    <%if(addInfo=true){  %>  
+       
     <p><div class="color">좋아하는 색깔 : <%=userInfo.color%></div></p>
     <p><div class="number">좋아하는 숫자 :<%=userInfo.number%></div></p>
     <p><div class="number">다짐한마디 : <%=userInfo.textarea%></div></p>
-
+      
+      <% } %>
     <a href="/">홈으로 이동하기</a>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        const colorSpan = document.querySelector('.color')
+        colorSpan.style.color="<%userInfo.color%>"
+      })
+    </script>
   </body>
 </html>

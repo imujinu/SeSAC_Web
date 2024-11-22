@@ -21,18 +21,18 @@
       <fieldset>
         <legend>생년월일</legend>
         <label>
-          <select name="date">
+          <select name="year">
             <%for(i=1990; i<2024 ; i++){%>
-            <option><%=i%></option>
+            <option value="<%=i%>"><%=i%></option>
             <%}%>
           </select>
           년
         </label>
 
         <label>
-          <select name="date">
+          <select name="month">
             <%for(i=1; i<13 ; i++){%>
-            <option><%=i%></option>
+            <option value="<%=i%>"><%=i%></option>
             <%}%></select
           >월
         </label>
@@ -40,7 +40,7 @@
         <label>
           <select name="date">
             <%for(i=1; i<13 ; i++){%>
-            <option><%=i%></option>
+            <option value="<%=i%>"><%=i%></option>
             <%}%></select
           >일
         </label>
@@ -50,13 +50,16 @@
         <legend>관심사</legend>
         <br />
         <label>
-          <input type="checkbox" name="interset" value="여행" /> 여행
+          <input type="checkbox" name="interset" value="여행" />
+          <span>여행</span>
         </label>
         <label>
-          <input type="checkbox" name="interset" value="패션" /> 패션
+          <input type="checkbox" name="interset" value="패션" />
+          <span>패션</span>
         </label>
         <label>
-          <input type="checkbox" name="interset" value="음식" /> 음식
+          <input type="checkbox" name="interset" value="음식" />
+          <span>음식</span>
         </label>
         <br />
       </fieldset>

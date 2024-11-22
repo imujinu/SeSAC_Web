@@ -62,15 +62,20 @@ app.get("/practice2", (req, res) => {
 
 // 3. 주소 지정 form GET 요청
 app.get("/practice_result", (req, res) => {
+  console.log(req.query);
   res.render("practice/practice_result", {
     userInfo: req.query,
+    addInfo: false, // practice1에서는 적은 정보를 주고 있음
   });
 });
 //  4. 주소 지정 form POST 요청
 
 app.post("/practice_result2", (req, res) => {
+  // res.send("응답완료");
+  // console.log(req.body);
   res.render("practice/practice_result", {
     userInfo: req.body,
+    addInfo: true,
   });
 });
 

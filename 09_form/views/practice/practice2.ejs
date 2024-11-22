@@ -24,18 +24,18 @@
       <fieldset>
         <legend>생년월일</legend>
         <label>
-          <select name="date">
+          <select name="year">
             <%for(i=1990; i<2024 ; i++){%>
-            <option><%=i%></option>
+            <option value="<%=i%>"><%=i%></option>
             <%}%>
           </select>
           년
         </label>
 
         <label>
-          <select name="date">
+          <select name="month">
             <%for(i=1; i<13 ; i++){%>
-            <option><%=i%></option>
+            <option value="<%=i%>"><%=i%></option>
             <%}%></select
           >월
         </label>
@@ -43,7 +43,7 @@
         <label>
           <select name="date">
             <%for(i=1; i<13 ; i++){%>
-            <option><%=i%></option>
+            <option value="<%=i%>"><%=i%></option>
             <%}%></select
           >일
         </label>
@@ -72,7 +72,7 @@
 
       다짐한마디 : <input type="textarea" name="textarea" />
       <br />
-      <button>회원가입</button>
+      <input type="submit" value="제출" />
     </form>
     <script></script>
   </body>

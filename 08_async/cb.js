@@ -16,15 +16,6 @@ function pickDrink(callback) {
   }, 3000);
 }
 
-function pickDrink() {
-  new Promise((resolve, reject) => {});
-  setTimeout(
-    function () {},
-
-    3000
-  );
-}
-
 function pay() {
   console.log(`상품 ${product}에 대한 가격 ${price}지불.`);
 }
