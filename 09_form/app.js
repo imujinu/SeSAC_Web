@@ -79,6 +79,9 @@ app.post("/practice_result2", (req, res) => {
   });
 });
 
+app.post("/practice1", (req, res) => {
+  res.send(req.body);
+});
 // API 4개 작업해야함
 
 // 실습문제!

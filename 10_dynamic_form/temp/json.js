@@ -39,4 +39,4 @@ console.log(typeof carJson);
 //  stringify()의 세 번째 인자 : 들여쓰기할 공백의 크기
 const carJson2 = JSON.stringify(obj, null, 5);
 console.log(carJson2);
-console.log(carJson2.model);
+console.log(carJson2.model); // undefinde (JSON은 문자열)

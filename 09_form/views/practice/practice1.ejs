@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>practice</title>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <h1>실습문제 1입니다.</h1>
-    <form action="practice_result" method="get">
+    <form name="register">
       <label>이름 <input type="text" name="name" /> </label>
       <br />
 
@@ -50,21 +53,53 @@
         <legend>관심사</legend>
         <br />
         <label>
-          <input type="checkbox" name="interset" value="여행" />
+          <input type="checkbox" name="interest" value="여행" />
           <span>여행</span>
         </label>
         <label>
-          <input type="checkbox" name="interset" value="패션" />
+          <input type="checkbox" name="interest" value="패션" />
           <span>패션</span>
         </label>
         <label>
-          <input type="checkbox" name="interset" value="음식" />
+          <input type="checkbox" name="interest" value="음식" />
           <span>음식</span>
         </label>
         <br />
       </fieldset>
-
-      <button>회원가입</button>
+      <div class="box"></div>
+      <button type="button" onclick="axiosGet()">제출(axios get)</button>
     </form>
+
+    <script>
+      function axiosGet() {
+        const box = document.querySelector(".box");
+        const form = document.forms["register"];
+
+        const arr = [];
+
+        for (let el of form.interest) {
+          if (el.checked) {
+            arr.push(el.value);
+          }
+        }
+
+        console.log(arr);
+
+        const data = {
+          name: form.name.value,
+          arr: arr,
+        };
+
+        axios({
+          method: "post",
+          url: "/practice1",
+          data: data,
+        }).then((res) => {
+          const { name, arr } = res.data;
+          console.log(res.arr);
+          box.innerText = `${name}님 환영합니다! 가입이 완료되었습니다 취미는 ${arr}`;
+        });
+      }
+    </script>
   </body>
 </html>
