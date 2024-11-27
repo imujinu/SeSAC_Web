@@ -113,6 +113,7 @@ app.post(
 
 app.post("/dynamicUpload", uploadDetail.single("dynamicFile"), (req, res) => {
   console.log(req.file);
+  console.log(req.body);
   /* 
   fieldname: 'dynamicFile',
   originalname: 'ì\x8A¤í\x81¬ë¦°ì\x83· 2024-11-25 122632.png',
@@ -123,7 +124,9 @@ app.post("/dynamicUpload", uploadDetail.single("dynamicFile"), (req, res) => {
   path: 'uploads\\ì\x8A¤í\x81¬ë¦°ì\x83· 2024-11-25 1226321732520704539.png',
   size: 218034
   */
-  res.send(req.file);
+  // 하나의 객체에 합쳐서 보내는 방법
+  // res.send(...req.body, ...req.file);
+  res.send({ file: req.file, fileInfo: req.body });
 });
 
 app.listen(PORT, () => {

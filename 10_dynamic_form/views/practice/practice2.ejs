@@ -70,12 +70,14 @@
         data: data,
       }).then((res) => {
         console.log(res.data);
+        // {isSuccess: false}
+        // {isSuccess: true, userId: 'banana'}
         if (res.data.isSuccess) {
-          loginResult.textContent = `${res.data.userId}님 로그인 성공~! `;
+          loginResult.textContent = `${res.data.userId}님 로그인 성공~!😊`;
           loginResult.classList.add("success");
           loginResult.classList.remove("error");
         } else {
-          loginResult.textContent = "아이디 또는 패스워드 오류입니다.";
+          loginResult.textContent = "아이디 또는 패스워드 오류입니다🥺";
           loginResult.classList.add("error");
           loginResult.classList.remove("success");
         }
