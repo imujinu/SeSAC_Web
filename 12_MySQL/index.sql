@@ -30,7 +30,7 @@ CREATE TABLE 테이블이름(
 -- 제약조건
 -- NOT NULL : null 허용 X 
 -- AUTO-INCREMENT : 자동 숫자 증가
---PRIMARY KEY : 기본키 설정 ( 중복 허용 X , null 허용 X)
+-- PRIMARY KEY : 기본키 설정 ( 중복 허용 X , null 허용 X)
 -- DEFAULT : 기본 값 설정
 -- UNIQUE : 중복 허용 X, null 허용 X, 한 테이블에 여러 개 설정 가능
 
@@ -139,8 +139,106 @@ SELECT * From user WHERE address Like"서울%" || name LIKE'김%'
 SELECT * FROM user ORDER BY age DESC; -- age 기준으로 내림차순 정렬
 
 --id가 6보다 큰 것을 조회하고 난 후, age 기준으로 오름차순 정렬
-SELECT * FROM user WHERE id > 6 ORDER BY age ASC; 
+SELECT * FROM user WHERE id > 6 ORDER BY age DESC; 
 
 --distinct
 
 SELECT age FROM user ORDER BY age ASC;
+SELECT DISTINCT age FROM user ORDER BY age ASC;
+
+--서울시에 사는 사람의 이름, 주소 조회/ 2개만..
+SELECT name,address 
+FROM user 
+WHERE address LIKE '서울%'
+ORDER BY name ASC 
+LIMIT 3; --LIMIT가 없다면 5개 나온다
+
+SELECT * FROM user;
+
+-- update 문
+-- UPDATE 테이블이름
+--SET 컬럼명 =="바꿀 데이터"
+--WHERE ID = 1
+
+UPDATE user SET address='서울특별시 도봉구' WHERE id=1; -- id값은 숫자
+
+UPDATE user SET address='제주특별자치도 제주시', name='이지현' WHERE id=2;  -- ,를 이용해 여러가지 값을 바꿀 수 있다.
+
+-- delete 문
+
+/* 
+DELETE FROM 테이블이름
+WHERE 조건
+
+ */
+DELETE FROM user WHERE id=11;
+DELETE FROM user WHERE id>8;
+
+SELECT * from user;
+
+CREATE TABLE student (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(10) NOT NULL DEFAULT '홍길동',
+    hobby VARCHAR(20)
+);
+
+desc student
+
+INSERT INTO student(hobby) VALUES ('등산');
+INSERT INTO student(hobby,name) VALUES ('등산','박상우');
+
+SELECT * from student;
+
+-- HAVING 과 GROUP BY 
+
+DROP TABLE IF EXISTS user; -- user 테이블이 존재할 경우 삭제
+
+show TABLES;
+
+CREATE TABLE user (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(10) NOT NULL,
+    specialize ENUM('축구','야구','클라이밍','배드민턴') NOT NULL, --ENUM에 해당하는 값만 받겠다는 뜻이다.
+     gender ENUM ('남','여') NOT NULL,
+    career_yeer INT NOT NULL 
+);
+
+desc user;
+
+INSERT INTO user VALUES(NULL, '김판곤', '축구', '남', 40);
+INSERT INTO user VALUES(NULL, '손흥민', '축구', '남',15);
+INSERT INTO user VALUES(NULL, '김자인', '클라이밍', '여',10);
+INSERT INTO user VALUES(NULL, '김동우', '축구', '남',1);
+INSERT INTO user VALUES(NULL, '전유진', '배드민턴', '여',2);
+INSERT INTO user VALUES(NULL, '이대호', '야구', '남',24);
+INSERT INTO user VALUES(NULL, '안세영', '배드민턴', '여',11);
+INSERT INTO user VALUES(NULL, '배서연', '클라이밍', '여',3);
+INSERT INTO user VALUES(NULL, '황희찬', '축구', '남',9);
+INSERT INTO user VALUES(NULL, '지소연', '축구', '여',17);
+INSERT INTO user VALUES(NULL, '이정후', '야구', '남',11);
+INSERT INTO user VALUES(NULL, '김광현', '야구', '남',21);
+
+SELECT * from user;
+
+--집계함수 사용해보기
+-- conut, sum, avg, min, max
+SELECT COUNT(specialize) FROM user WHERE specialize='축구'; 
+
+--specialize 가 축구인 튜플의 개수
+
+SELECT SUM(career_yeer) FROM user; -- 전체 선수의 경력 합
+SELECT SUM(career_yeer) FROM user WHERE specialize='축구'; -- 축구 선수의 경력 합
+SELECT AVG(career_yeer) FROM user WHERE specialize='축구'; -- 축구 선수의 경력 평균
+SELECT MIN(career_yeer) FROM user WHERE specialize='축구'; -- 경력이 가장 작은 사람
+SELECT MAX(career_yeer) FROM user WHERE specialize='축구'; -- 경력이 가장 많은 사람
+
+--group by(같은 그룹끼리 묶어서 조회)
+
+
+SELECT specialize FROM user GROUP BY specialize; 
+SELECT specialize, COUNT(specialize) FROM user GROUP BY specialize; 
+
+SELECT specialize, COUNT(specialize) FROM user WHERE gender='여' GROUP BY specialize 
+-- group화 된 테이블에 조건을 다는 것 
+HAVING COUNT(specialize) >=2; 
+
