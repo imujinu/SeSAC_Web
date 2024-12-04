@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('include/include', { title: '회원 정보' })%>
+  <body>
+    <h1>회원 정보</h1>
+    <!-- TODO: href 속성값 설정하기 -->
+    <a href="/user">HOME</a>
+    <p>ID 수정 불가능, Password, Name 수정 가능</p>
+
+    <!-- TODO: 각 input의 value 값을 로그인 한 사람의 정보로 채우기 -->
+    <form name="form_profile">
+      <label for="userid">ID</label>
+      <input type="hidden" id="id" value="" />
+      <!-- readonly: userid는 수정 불가능 (조건임) -->
+      <input
+        id="userid"
+        type="text"
+        name="userid"
+        value="<%=id%>"
+        readonly
+      /><br />
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        name="pw"
+        value="<%=pw%>"
+        required
+      /><br />
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        value="<%=name%>"
+        required
+      /><br />
+      <button type="button" onclick="profileEdit();">Edit</button>
+      <button type="button" onclick="profileDelete();">Delete</button>
+    </form>
+
+    <script>
+      // TODO: [Login] 버튼 클릭시 서버에 회원 정보 수정 요청하기
+      // POST /user/profile/edit
+      function profileEdit() {
+        const form = document.forms["form_profile"];
+        if (
+          form.userid.value.length === 0 ||
+          form.pw.value.length === 0 ||
+          form.name.value.length === 0
+        ) {
+          alert("이름과 패스워드 이름을 모두 기입해주세요");
+          return;
+        }
+
+        if (
+          form.userid.value.length > 20 ||
+          form.pw.value.length > 20 ||
+          form.name.value.length > 20
+        ) {
+          alert("이름과 패스워드 이름은 20자 미만으로 작성해주세요!");
+          return;
+        }
+        data = {
+          id: form.userid.value,
+          pw: form.pw.value,
+          name: form.name.value,
+        };
+        axios({
+          url: "/user/profile/edit",
+          method: "patch",
+          data: data,
+        })
+          .then((res) => {
+            if (res.data.issuccess) alert("정보수정성공");
+          })
+          .catch((err) => console.error(err));
+      }
+
+      // TODO: [Login] 버튼 클릭시 서버에 회원 정보 삭제 요청하기
+      // POST /user/profile/delete
+      function profileDelete() {
+        const form = document.forms["form_profile"];
+        if (
+          form.userid.value.length === 0 ||
+          form.pw.value.length === 0 ||
+          form.name.value.length === 0
+        ) {
+          alert("이름과 패스워드 이름을 모두 기입해주세요");
+          return;
+        }
+
+        if (
+          form.userid.value.length > 20 ||
+          form.pw.value.length > 20 ||
+          form.name.value.length > 20
+        ) {
+          alert("이름과 패스워드 이름은 20자 미만으로 작성해주세요!");
+          return;
+        }
+        data = {
+          id: form.userid.value,
+        };
+        axios({
+          url: "/user/profile/delete",
+          method: "delete",
+          data: data,
+        })
+          .then((res) => {
+            if (res.data.issuccess) {
+              alert("회원 탈퇴 성공");
+              document.location.href = "/user";
+            }
+          })
+          .catch((err) => console.error(err));
+      }
+    </script>
+  </body>
+</html>
