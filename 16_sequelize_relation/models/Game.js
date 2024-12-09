@@ -8,7 +8,7 @@ const GameModel = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
       },
-      data: {
+      date: {
         type: DataTypes.DATE,
         allowNull: false,
       },
