@@ -1,6 +1,6 @@
 
 @server=http://localhost:8080
-@playerId=2
+@playerId=1
 @teamId=2
 
 ### 전체 선수 조회

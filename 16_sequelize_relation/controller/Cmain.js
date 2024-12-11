@@ -42,7 +42,6 @@ exports.getPlayer = async (req, res) => {
     res.status(500).send("server error");
   }
 };
-
 // POST /players
 // 선수 추가
 /* 

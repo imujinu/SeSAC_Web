@@ -8,21 +8,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //TODO : 쿠키 미들웨어 설정
 
-app.use(cookieParser());
-
-const cookieConfig = {
-  expires: new Date(2024, 12, 10),
-};
+app.use(cookieParser("secret key"));
 
 app.get("/", (req, res) => {
-  res.render("index", { popup: req.cookies.myCookie });
+  console.log(req.cookies);
+  res.render("index", { popup: req.signedCookies.myCookie });
   // TODO : 쿠키값 가져오기 및 index.ejs에 보내기
   //  res.render ('index', {popup : 쿠키값})
 });
 
 app.post("/set-cookie", (req, res) => {
   // 쿠키 생성 하기
-  res.cookie("myCookie", "cookie~", cookieConfig);
+  res.cookie("myCookie", "cookie~", {
+    signed: true, // 암호화된 쿠키
+    maxAge: 1000 * 60 * 60 * 24, // 수명 24시간
+  });
   res.send(req.cookies);
 });
 

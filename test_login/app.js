@@ -1,25 +1,29 @@
 const express = require("express");
 const app = express();
 const PORT = 8080;
-const sequelize = require("sequelize");
-// db={sequelize:~~~, Sequelize:~~~~} 객체 구조분해로 sequelize값만 가져옴
-// db.sequelize
-//set middleware
+const { sequelize } = require("./models");
+const session = require("express-session");
+const crpyto = require("crypto");
 
 app.set("view engine", "ejs");
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// router 설정
 const indexRouter = require("./routes");
 app.use("/", indexRouter);
 
-// sync()
+// app.use(session({}))
+
+app.get("*", (req, res) => {
+  res.render("404");
+});
 
 sequelize
   .sync({ force: false })
   .then(() => {
-    console.log("db connection success!");
+    console.log("db connected!");
+
     app.listen(PORT, () => {
       console.log(`http://localhost:${PORT}`);
     });
