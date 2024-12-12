@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+    <title>HOME</title>
     <!-- axios cdn -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>HOME</h1>
-    <form name="login">
-      <input type="text" name="id" placeholder="아이디를 입력해주세요" />
-      <input type="password" name="pw" placeholder="비밀번호를 입력해주세요" />
-      <button type="button" onclick="Login()">로그인</button>
+    <% if(login) { %>
+    <h1><%= name %>님 안녕하세요!</h1>
+    <form>
+      <button type="button" onclick="logout()">로그아웃</button>
     </form>
-
+    <% } else { %>
+    <h1>안녕하세요 여기는 홈입니다</h1>
+    <a href="/register">회원가입 하러가기</a>
+    <a href="/login">로그인 하러가기</a>
+    <% } %>
     <script>
-      async function Login() {
-        const form = document.forms["login"];
-        const result = await axios({
-          method: "post",
-          url: "/",
-          data: {
-            id: form.id.value,
-            pw: form.pw.value,
-          },
-        });
+      async function logout() {
+        try {
+          const result = await axios({
+            url: "/logout",
+            method: "post",
+          });
+
+          if (result.data.delete) {
+            alert("로그아웃에 성공하셨습니다.");
+            document.location.href = "/";
+          } else {
+            alert("이미 세션이 만료되었습니다.");
+            document.location.href = "/";
+          }
+        } catch (err) {
+          console.log("err", err);
+          res.status(500).send("server error");
+        }
       }
     </script>
   </body>

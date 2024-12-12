@@ -3,12 +3,22 @@ const app = express();
 const PORT = 8080;
 const { sequelize } = require("./models");
 const session = require("express-session");
-const crpyto = require("crypto");
 
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(
+  session({
+    secret: "secret Key",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+    },
+  })
+);
 
 const indexRouter = require("./routes");
 app.use("/", indexRouter);

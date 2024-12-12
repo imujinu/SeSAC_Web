@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <% if(login){ %>
+    <p><%= name%> 님 이미 로그인 하셨습니다.</p>
+    <%}else{%>
+    <h1>로그인 페이지</h1>
+    <form name="login">
+      <div>
+        <input type="text" name="userid" placeholder="아이디를 입력해주세요" />
+      </div>
+      <div>
+        <input
+          type="password"
+          name="pw"
+          placeholder="비밀번호를 입력해주세요"
+        />
+      </div>
+      <div></div>
+      <button type="button" onclick="Login()">로그인</button>
+    </form>
+    <%}%>
+
+    <script>
+      async function Login() {
+        try {
+          const form = document.forms["login"];
+          const result = await axios({
+            method: "post",
+            url: "/login",
+            data: {
+              userid: form.userid.value,
+              pw: form.pw.value,
+            },
+          });
+          const { login, message } = result.data;
+          if (login) {
+            document.location.href = "/";
+          } else {
+            alert(message);
+            form.reset();
+          }
+        } catch (err) {
+          console.log("err", err);
+          res.status(500).send("server error");
+        }
+      }
+    </script>
+  </body>
+</html>
