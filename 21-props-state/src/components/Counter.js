@@ -25,7 +25,7 @@ const Counter = () => {
       <h5>{number}</h5>
       <button onClick={increase}>더하기</button>
       <button
-        onClick={() => {
+        onClick={(event) => {
           alertMsg("안녕하세요");
         }}
       >
