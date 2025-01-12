@@ -25,6 +25,9 @@ import Alphabet from "./components/ex/Alphabet";
 import Email from "./components/ex/Email";
 import Board from "./components/ex/Board";
 import Board2 from "./components/ex/Board2";
+import Test1 from "./components/ex/Test1";
+import Board3 from "./components/ex/Board3";
+
 function App() {
   const arr = [
     { name: "peach", krPrice: 10000, number: 5 },
@@ -77,7 +80,9 @@ function App() {
       {/* <Alphabet /> */}
       {/* <Email />
       <Board /> */}
-      <Board2 />
+      {/* <Board2 /> */}
+      {/* <Test1 /> */}
+      <Board3 />
     </div>
   );
 }
