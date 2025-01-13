@@ -80,9 +80,9 @@ function App() {
       {/* <Alphabet /> */}
       {/* <Email />
       <Board /> */}
-      {/* <Board2 /> */}
+      <Board2 />
       {/* <Test1 /> */}
-      <Board3 />
+      {/* <Board3 /> */}
     </div>
   );
 }

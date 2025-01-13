@@ -6,4 +6,4 @@ drop table user;
 
 desc user;
 
-SELECT * FROM user
+SELECT * FROM user;

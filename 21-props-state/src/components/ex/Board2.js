@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function MapPractice2() {
+  const ref1Focus = () => {
+    ref1.current.focus();
+  };
+  const ref2Focus = () => {
+    ref2.current.focus();
+  };
+  const ref1 = useRef("");
+  const ref2 = useRef("");
   const [comment, setComment] = useState([
     { writer: "민봉", title: "화이팅!!!" },
     { writer: "진우", title: "집에 가고 싶다..." },
@@ -13,6 +21,14 @@ export default function MapPractice2() {
   const [result, setResult] = useState([]); // 검색결과에 대한 배열
   const [searchType, setSearchType] = useState("writer");
   const addComment = () => {
+    if (inputWriter == "") {
+      ref1Focus();
+      return;
+    } else if (inputTitle == "") {
+      ref2Focus();
+      return;
+    }
+
     let newComment = {
       writer: inputWriter,
       title: inputTitle,
@@ -34,10 +50,6 @@ export default function MapPractice2() {
   // 검색을 실행하는 함수
   const searchComment = () => {
     let searchResult = comment.filter((item) => {
-      console.log(item);
-
-      console.log(item[searchType]);
-
       //   console.log("안녕하세요".includes("안녕"));
       //   console.log("안녕하세요".includes("hi"));
       //   console.log(
@@ -66,7 +78,9 @@ export default function MapPractice2() {
   return (
     <div>
       <form>
-        <label htmlFor="writer">작성자: </label>
+        <label htmlFor="writer" ref={ref1}>
+          작성자:{" "}
+        </label>
         <input
           type="text"
           name="writer"
@@ -76,7 +90,9 @@ export default function MapPractice2() {
             setInputWriter(e.target.value);
           }}
         />{" "}
-        <label htmlFor="title">제목: </label>
+        <label htmlFor="title" ref={ref2}>
+          제목:{" "}
+        </label>
         <input
           type="text"
           name="title"
