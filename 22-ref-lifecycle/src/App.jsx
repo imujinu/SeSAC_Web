@@ -5,6 +5,7 @@ import LifeCycleFunction from "./components/LifeCycleFunction";
 
 import Container from "./components/practice/Container";
 import FakePost from "./components/practice/FakePost";
+import Post from "./components/practice/Post";
 import RealPost from "./components/practice/RealPost";
 
 import { RefClass1, RefClass2 } from "./components/RefClass";
@@ -27,7 +28,8 @@ function App() {
 
       {/* <RealPost /> */}
       {/* <Color /> */}
-      <Quiz />
+      {/* <Quiz /> */}
+      <Post />
     </div>
   );
 }

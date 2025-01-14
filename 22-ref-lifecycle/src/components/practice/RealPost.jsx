@@ -9,20 +9,21 @@ export default function RealPost() {
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/posts"
     );
-
+    setPosts(response.data.slice(0, 10));
     console.log(response.data);
   };
   //   useEffect의 콜백에는 async를 사용할 수 없음
   //  > async await 을 사용하는 함수를 따로 만들어야 함함
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => {
-        setPosts(res.data.slice(0, 5));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // axios
+    //   .get("https://jsonplaceholder.typicode.com/posts")
+    //   .then((res) => {
+    //     setPosts(res.data.slice(0, 5));
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    getPosts();
   }, []);
 
   return (
