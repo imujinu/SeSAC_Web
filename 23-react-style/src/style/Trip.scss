@@ -1,0 +1,34 @@
+@import "~include-media/dist/include-media";
+.container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+
+  & > div {
+    width: 20%;
+    height: 100%;
+  }
+
+  @include media("<768px") {
+    & > div {
+      width: 30%;
+      height: 100%;
+    }
+  }
+  @include media("<532px") {
+    & > div {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+//   @media (width<"768px") {
+//     & > div {
+//       width: 30%;
+//       height: 100%;
+//     }
+//   }
+
+// }
