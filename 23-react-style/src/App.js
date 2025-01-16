@@ -1,6 +1,6 @@
 import BasicCss from "./components/BasicCss";
 import ModuleCss from "./components/ModuleCss";
-// import Ball from "./components/practice/Ball";
+import Ball from "./components/practice/Ball";
 import Bug from "./components/practice/Bug";
 import PostItem from "./components/practice/PostItem";
 import PostList from "./components/practice/PostList";
@@ -20,10 +20,10 @@ function App() {
       {/* <React /> */}
       {/* <Sass /> */}
       {/* <Bug /> */}
-      {/* <Ball /> */}
+      <Ball />
       {/* <PostItem /> */}
       {/* <PostList /> */}
-      <Trip />
+      {/* <Trip /> */}
     </div>
   );
 }
