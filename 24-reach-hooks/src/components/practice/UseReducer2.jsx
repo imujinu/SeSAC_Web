@@ -1,33 +1,30 @@
 import React, { useReducer, useState } from "react";
 
 const reducer = (state, action) => {
-  // (새로운 Todo 추가 로직)
-  // (Todo 완료 상태 토글 로직)
-  // (Todo 삭제 로직)
-  console.log(action);
-  console.log(state);
-
   switch (action.type) {
     case "add":
-      return [...state, action.payload];
+      return [
+        ...state,
+        {
+          id: state.length ? state[state.length - 1].id : 1,
+          text: action.payload,
+          completed: false,
+        },
+      ];
     case "remove":
-      return state.filter((el) => el !== action.payload);
+      return state.filter((el) => el.text != action.payload);
     case "toggle":
-      return;
+      return state.map((el) =>
+        el.text === action.payload ? { ...el, completed: !el.completed } : el
+      );
     default:
       return action;
   }
 };
 
-const toggleStyle = { color: "gray" };
-
 const TodoApp = () => {
   const [todo, dispatch] = useReducer(reducer, []);
   const [input, setInput] = useState("");
-
-  // 상태 관리
-
-  // 추가 이벤트 핸들러
 
   return (
     <div>
@@ -50,15 +47,19 @@ const TodoApp = () => {
         return (
           <ul style={{ listStyleType: "none" }} key={i}>
             <li
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: el.completed ? "gray" : "black",
+                textDecoration: el.completed ? "line-through" : "none",
+              }}
               onClick={() => {
-                dispatch({ type: "toggle", payload: el });
+                dispatch({ type: "toggle", payload: el.text });
               }}
             >
-              {el}
+              {el.text}
               <button
                 onClick={() => {
-                  dispatch({ type: "remove", payload: el });
+                  dispatch({ type: "remove", payload: el.text });
                 }}
               >
                 Delete
