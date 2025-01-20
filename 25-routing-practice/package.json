@@ -1,5 +1,5 @@
 {
-  "name": "test_router",
+  "name": "25-routing-practice",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,6 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.28.2",
     "react-scripts": "5.0.1",
-    "sass": "^1.83.4",
     "styled-components": "^6.1.14"
   },
   "scripts": {

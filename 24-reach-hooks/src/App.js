@@ -18,16 +18,16 @@ function App() {
     <>
       {/* <UseMemo1 />
       <UseMemoObj /> 
-      <UseCallbackEx1 />
-      <UseCallbackEx2 />
-      <UseReducer />
-      <CustomHook />t
       <Form />
       <UseMemo/>
       <UseCallback />
+      <CustomHook />t
       */}
+      <UseCallbackEx1 />
+      <UseCallbackEx2 />
+      <UseReducer />
       {/* <User /> */}
-      <UseReducer2 />
+      {/* <UseReducer2 /> */}
     </>
   );
 }
