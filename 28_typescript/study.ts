@@ -39,11 +39,11 @@ function sum2(...a: number[]): number {
 
 console.log(sum2(1, 2, 3, 4, 10));
 
-function arrElement<K>(a: K[], b: number): string | false {
+function arrElement<K>(a: K[], b: number): K | false {
   if (a.length - 1 < b) {
     return false;
   } else {
-    return String(a[b]);
+    return a[b];
   }
 }
 

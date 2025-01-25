@@ -16,3 +16,7 @@ function jsPrint(a, b, c) {
 jsPrint(1, 2);
 jsPrint(1, 2, 3);
 jsPrint(1, 2, 3, 4, 5);
+
+function addSomething(a, b) {
+  return a + b; // number, string
+}
