@@ -6,6 +6,7 @@ export default function HeaderMenu() {
       <Link to={"/"}> 홈으로</Link>
       <Link to={"/lecture"}> 수업</Link>
       <Link to={"/practice"}> 연습하기</Link>
+      <Link to={"/practice/codingon"}> 과제</Link>
     </header>
   );
 }
