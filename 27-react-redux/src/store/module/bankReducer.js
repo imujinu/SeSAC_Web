@@ -1,4 +1,4 @@
-//action type의 tkdtn
+//action type의
 const WITHDRAW = "withdraw";
 const DEPOSIT = "deposit";
 
@@ -15,9 +15,9 @@ export const withdraw = (payload) => ({
 export const bankReducer = (state = account, action) => {
   switch (action.type) {
     case DEPOSIT:
-      return state + Number(action.payload);
+      return state + action.payload;
     case WITHDRAW:
-      return state - Number(action.payload);
+      return state - action.payload;
     default:
       return state;
   }
