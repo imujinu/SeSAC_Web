@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>채팅방 UI만들기</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="../css/chat.css" />
+  </head>
+  <body>
+    <div class="enter"></div>
+    <div class="myMsg"></div>
+    <div class="otherMsg"></div>
+
+    <form id="chat">
+      <input type="text" id="msg" />
+      <button type="submit">전송</button>
+    </form>
+    <script>
+      const socket = io();
+      const form = document.querySelector("#chat");
+      const msg = document.querySelector("#msg");
+      const room = prompt("채팅방을 입력해주세요");
+      const myMsg = document.querySelector(".myMsg");
+      const otherMsg = document.querySelector(".otherMsg");
+      const enter = document.querySelector(".enter");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        socket.emit("chat", msg.value, (my) => {
+          const p = document.createElement("p");
+          p.innerHTML = my;
+          myMsg.append(p);
+          msg.value = "";
+        });
+      });
+      socket.on("join", room);
+
+      socket.on("enter", (msg) => {
+        console.log(msg);
+        const p = document.createElement("p");
+        p.innerHTML = msg;
+        enter.append(p);
+      });
+
+      socket.on("text", (msg) => {
+        const p = document.createElement("p");
+        p.innerHTML = msg;
+        otherMsg.append(p);
+      });
+    </script>
+  </body>
+</html>
