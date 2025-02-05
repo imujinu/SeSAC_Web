@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <form id="form">
+      <button type="submit" value="hello">hello</button>
+      <button type="submit" value="study">study</button>
+      <button type="submit" value="bye">bye</button>
+    </form>
+    <ul></ul>
+    <script>
+      const socket = io();
+      const form = document.querySelector("#form");
+      const ul = document.querySelector("ul");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        socket.emit("assignment", { client: e.submitter.value }, (data) => {
+          console.log(data.client);
+          const li = document.createElement("li");
+          switch (data.client) {
+            case "hello":
+              li.textContent = `${data.client} : 안녕하세요요 `;
+              break;
+            case "study":
+              li.textContent = `${data.client} : 공부하자자 `;
+              break;
+            case "bye":
+              li.textContent = `${data.client} : 잘가~ `;
+              break;
+            default:
+              break;
+          }
+          ul.append(li);
+        });
+      });
+    </script>
+  </body>
+</html>
